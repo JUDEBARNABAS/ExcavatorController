@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Excavator Controller</string>
+    <string name="connection_status_connected">Connected</string>
+    <string name="connection_status_disconnected">Disconnected</string>
+    <string name="connection_status_connecting">Connecting…</string>
+    <string name="mode_manual">MANUAL</string>
+    <string name="mode_voice">VOICE</string>
+    <string name="mode_auto">AUTO</string>
+    <string name="wifi_mode">Wi-Fi</string>
+    <string name="ble_mode">BLE</string>
+    <string name="chassis_rover">ROVER CHASSIS</string>
+    <string name="arm_mechanics">ARM &amp; BUCKET</string>
+    <string name="base_rotation">BASE ROTATION</string>
+    <string name="boom_elevation">BOOM ELEVATION</string>
+    <string name="stick_angle">STICK ANGLE (MG996R)</string>
+    <string name="bucket_angle">BUCKET ANGLE (MG996R)</string>
+    <string name="start_auto_run">START AUTO RUN</string>
+    <string name="confirm_position">CONFIRM POSITION</string>
+    <string name="voice_listening">Listening for command…</string>
+    <string name="voice_tap_speak">Tap mic to speak command</string>
+    <string name="voice_commands_hint">"move forward", "reverse", "turn left", "turn right", "stop", "dig", "confirm"</string>
+    <string name="emergency_stop">STOP</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "Excavator Controller",
+  "description": "Industrial landscape control interface for ESP32-S3 heavy-duty excavator robot with Wi-Fi & BLE, tactile thumb controls, speech recognition, and auto sequences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

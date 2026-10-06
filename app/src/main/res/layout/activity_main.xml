@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_landscape_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0F13"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <!-- Top Connection & Mode Header Bar -->
+    <LinearLayout
+        android:id="@+id/top_header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#0D0F13"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <!-- Protocol & Status Dot -->
+        <View
+            android:id="@+id/connection_status_dot"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="#FF3D00" />
+
+        <TextView
+            android:id="@+id/tv_connection_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="monospace"
+            android:text="Wi-Fi (http://192.168.4.1)"
+            android:textColor="#F0F4F8"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Segmented Mode Control [MANUAL] [VOICE] [AUTO] -->
+        <LinearLayout
+            android:id="@+id/segmented_mode_group"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="#1D222B"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <Button
+                android:id="@+id/btn_mode_manual"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#FFB703"
+                android:paddingHorizontal="12dp"
+                android:text="MANUAL"
+                android:textColor="#0D0F13"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_mode_voice"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="12dp"
+                android:text="VOICE"
+                android:textColor="#94A3B8" />
+
+            <Button
+                android:id="@+id/btn_mode_auto"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="12dp"
+                android:text="AUTO"
+                android:textColor="#94A3B8" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Emergency Stop Button -->
+        <Button
+            android:id="@+id/btn_emergency_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:background="#E63946"
+            android:text="E-STOP"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Main Two-Column Split Screen Area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- LEFT WING: Rover Chassis Mobility (4-Way D-Pad) -->
+        <RelativeLayout
+            android:id="@+id/card_left_chassis"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="#15181F"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_chassis_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="ROVER CHASSIS (RV:0..4)"
+                android:textColor="#FFB703"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true">
+
+                <Button
+                    android:id="@+id/btn_dpad_fwd"
+                    android:layout_width="64dp"
+                    android:layout_height="54dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#1D222B"
+                    android:text="▲"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_dpad_left"
+                    android:layout_width="64dp"
+                    android:layout_height="54dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="#1D222B"
+                    android:text="◀"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_dpad_brake"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_centerInParent="true"
+                    android:background="#FB8500"
+                    android:text="STOP"
+                    android:textColor="#0D0F13"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_dpad_right"
+                    android:layout_width="64dp"
+                    android:layout_height="54dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="#1D222B"
+                    android:text="▶"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_dpad_rev"
+                    android:layout_width="64dp"
+                    android:layout_height="54dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#1D222B"
+                    android:text="▼"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- RIGHT WING: Arm & Bucket Mechanics (Upper Motors + Lower Sliders) -->
+        <LinearLayout
+            android:id="@+id/card_right_arm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="#15181F"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ARM &amp; BUCKET MECHANICS"
+                android:textColor="#FB8500"
+                android:textStyle="bold" />
+
+            <!-- UPPER QUADRANT: Wiper Motors (Base & Boom) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#1D222B"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BASE (BS)"
+                        android:textColor="#94A3B8"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_base_left"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:background="#252C37"
+                            android:text="LEFT"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/btn_base_right"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:background="#252C37"
+                            android:text="RIGHT"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#1D222B"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BOOM (BM)"
+                        android:textColor="#94A3B8"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_boom_up"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:background="#252C37"
+                            android:text="UP"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/btn_boom_down"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:background="#252C37"
+                            android:text="DOWN"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- LOWER QUADRANT: SeekBars (Stick & Bucket) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#1D222B"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STICK SERVO (0°..180°)"
+                    android:textColor="#94A3B8"
+                    android:textSize="10sp" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_stick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="180"
+                    android:progress="90" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="BUCKET SERVO (0°..180°)"
+                    android:textColor="#94A3B8"
+                    android:textSize="10sp" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_bucket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="180"
+                    android:progress="90" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Telemetry Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_telemetry_bar"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#0D0F13"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/tv_raw_payload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="BS:0,BM:0,ST:90,BK:90,RV:0"
+            android:textColor="#FFB703"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</LinearLayout>
